@@ -57,7 +57,7 @@
         };
         $scope.nextState = function () {
           $scope.user.level++;
-          $scope.user.level = $scope.user.level % 3;
+          $scope.user.level = $scope.user.level % 4;
         };
       }
     };
@@ -107,11 +107,10 @@
   app.directive('stateDisplay', function () {
     return {
       link: function (scope, el, attrs) {
-        var colors = attrs['colors'].split(" ");
-        var len = colors.length;
-        scope.$watch(attrs['stateDisplay'], function (newVal, oldVal) {
-          var idx = newVal % len;
-          el.css('background-color', colors[idx]);
+        var params = attrs['stateDisplay'].split(" ");
+        var linkVar = params[0];
+        scope.$watch(linkVar, function (newVal, oldVal) {
+          el.css('background-color', params[newVal + 1]);
         });
       }
     };
