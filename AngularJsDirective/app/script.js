@@ -1,7 +1,6 @@
 ﻿(function () {
   var mainCtrl = function ($scope) {
-    $scope.message = "Hello Angular";
-    $scope.user1 = {
+    $scope.luke = {
       name: "Luke Skywalker",
       address: {
         street: 'PO Box 123',
@@ -14,7 +13,7 @@
         'Chewbacca'
       ]
     };
-    $scope.user2 = {
+    $scope.han = {
       name: "Han Solo",
       address: {
         street: 'PO Box 123',
