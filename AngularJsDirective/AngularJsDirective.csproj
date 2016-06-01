@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\script.js" />
+    <Content Include="app\script4.js" />
     <Content Include="app\videoCtrl.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -112,6 +113,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\forklift.png" />
+    <Content Include="Images\inventory.png" />
+    <Content Include="Images\Work-in-Progress.jpg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -914,15 +918,18 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="templates\3.5.html" />
     <Content Include="templates\3.6.html" />
-    <Content Include="templates\3.9.html" />
+    <Content Include="templates\4.2.html" />
+    <Content Include="templates\4.html" />
     <Content Include="templates\3.8.html" />
     <Content Include="templates\3.7.html" />
     <Content Include="templates\address.html" />
+    <Content Include="templates\displayBox.html" />
     <Content Include="templates\main.html" />
     <Content Include="templates\removeFriend.html" />
     <Content Include="templates\userInfoCard.html" />
     <Content Include="templates\userTile.html" />
     <Content Include="templates\video.html" />
+    <Content Include="templates\WIP.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
