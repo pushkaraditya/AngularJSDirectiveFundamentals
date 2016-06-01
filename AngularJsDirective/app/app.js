@@ -8,6 +8,10 @@
     .when('/video', {
       templateUrl: 'templates/video.html',
       controller: 'videoCtrl'
+    }).
+    when('/3.5', {
+      templateUrl: 'templates/3.5.html',
+      controller: 'ctrl3.5'
     })
     .otherwise({
         redirectTo: '/'

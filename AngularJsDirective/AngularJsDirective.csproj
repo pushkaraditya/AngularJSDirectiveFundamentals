@@ -907,10 +907,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="app\ctrl3.js" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="templates\3.5.html" />
     <Content Include="templates\address.html" />
     <Content Include="templates\main.html" />
     <Content Include="templates\removeFriend.html" />
