@@ -12,6 +12,10 @@
     when('/3.5', {
       templateUrl: 'templates/3.5.html',
       controller: 'ctrl3.5'
+    }).
+    when('/3.6', {
+      templateUrl: 'templates/3.6.html',
+      controller: 'ctrl3.6'
     })
     .otherwise({
         redirectTo: '/'
