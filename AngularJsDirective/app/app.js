@@ -24,12 +24,17 @@
     when('/3.:version', {
       templateUrl: 'templates/3.8.html',
       controller: 'ctrl3.8'
-    })
-    .otherwise({
+    }).
+    when('/4', {
+      templateUrl: 'templates/4.html',
+      controller: 'ctrl4'
+    }).
+    when('/4.:sNo', {
+      templateUrl: 'templates/WIP.html',
+      controller: 'ctrl4'
+    }).
+    otherwise({
         redirectTo: '/'
     });;
-
-    var $route = $routeProvider.$get[$routeProvider.$get.length - 1]({ $on: function () { } });
-    //$route.routes['/3.:version'].regexp = /^\/(?:version\/(\[8-9]))$/
   });
 }());
