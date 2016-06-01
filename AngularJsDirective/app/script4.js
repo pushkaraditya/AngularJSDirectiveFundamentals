@@ -23,4 +23,22 @@
     } else
       $scope.chapter = chapters[$scope.sNo - 1];
   });
+
+  app.controller("ctrl4.2", function ($scope) {
+    $scope.message = "This is the message from controller";
+  });
+
+  app.directive("displayBox", function () {
+    return {
+      restrict: "E",
+      templateUrl: "templates/displayBox.html",
+      controller: function ($scope) {
+        $scope.hidden = false;
+        $scope.close = function () {
+          $scope.hidden = true;
+        };
+      },
+      transclude: true 
+    };
+  });
 }());
