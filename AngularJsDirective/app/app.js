@@ -5,6 +5,10 @@
       templateUrl: 'templates/main.html',
       controller: 'mainCtrl'
     })
+    .when('/video', {
+      templateUrl: 'templates/video.html',
+      controller: 'videoCtrl'
+    })
     .otherwise({
         redirectTo: '/'
       });;
