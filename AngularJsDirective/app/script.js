@@ -50,7 +50,7 @@
         };
         $scope.removeFriend = function (friend) {
           var idx = $scope.user.friends.indexOf(friend);
-          if (idx >= -1) {
+          if (idx > -1) {
             $scope.user.friends.splice(idx, 1);
           }
         };
