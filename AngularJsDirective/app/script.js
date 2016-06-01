@@ -48,6 +48,12 @@
         $scope.collapse = function () {
           $scope.collapsed = !$scope.collapsed;
         };
+        $scope.removeFriend = function (friend) {
+          var idx = $scope.user.friends.indexOf(friend);
+          if (idx >= -1) {
+            $scope.user.friends.splice(idx, 1);
+          }
+        };
       }
     };
   });
@@ -67,13 +73,6 @@
         $scope.collapseAddress = function () {
           $scope.collapsed = true;
         };
-        $scope.remove = function () {
-          alert();
-          //var idx = $scope.user.friends.indexOf(friend);
-          //if (idx >= -1) {
-          //  $scope.user.friends.splice(idx, 1);
-          //}
-        };
       }
     };
   });
@@ -83,7 +82,7 @@
       templateUrl: 'templates/removeFriend.html',
       restrict: 'E',
       scope: {
-        method: '&'
+        notifyParent: '&removeMethod'
       },
       controller: function ($scope) {
         $scope.removing = false;
@@ -94,7 +93,7 @@
           $scope.removing = false;
         };
         $scope.confirmRemove = function () {
-          $scope.method();
+          $scope.notifyParent({ friend: 'Chewbacca' });
         };
       }
     };
