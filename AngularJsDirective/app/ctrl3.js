@@ -33,14 +33,18 @@
 			templateUrl: 'templates/userTile.html',
 			scope: {
 				user: '='
-			},
-			controller: function ($scope) {
-				$scope.select = function () {
-					$scope.user.selected = !$scope.user.selected;
-				};
 			}
-		}
+		};
 	});
 
-	app.directive()
+	app.directive('userClickSelect', function () {
+		return {
+			link: function (scope, el, attrs) {
+				el.on('click', function () {
+					scope.user.selected = !scope.user.selected;
+					scope.$apply();
+				});
+			}
+		};
+	});
 }());
