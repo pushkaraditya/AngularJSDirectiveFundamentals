@@ -21,16 +21,15 @@
       templateUrl: 'templates/3.7.html',
       controller: 'ctrl3.7'
     }).
-    when('/3.8', {
+    when('/3.:version', {
       templateUrl: 'templates/3.8.html',
       controller: 'ctrl3.8'
-    }).
-    when('/3.9', {
-      templateUrl: 'templates/3.9.html',
-      controller: 'ctrl3.9'
     })
     .otherwise({
         redirectTo: '/'
-      });;
+    });;
+
+    var $route = $routeProvider.$get[$routeProvider.$get.length - 1]({ $on: function () { } });
+    //$route.routes['/3.:version'].regexp = /^\/(?:version\/(\[8-9]))$/
   });
 }());

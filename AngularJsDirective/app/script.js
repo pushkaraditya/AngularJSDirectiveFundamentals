@@ -107,18 +107,11 @@
   app.directive('stateDisplay', function () {
     return {
       link: function (scope, el, attrs) {
+        var colors = attrs['stateDisplay'].split(" ");
+        var len = colors.length;
         scope.$watch(attrs['stateDisplay'], function (newVal, oldVal) {
-          switch (newVal) {
-            case 0:
-              el.css('background-color', 'white');
-              break;
-            case 1:
-              el.css('background-color', 'yellow');
-              break;
-            case 2:
-              el.css('background-color', 'red');
-              break;
-          }
+          var idx = newVal % len;
+          el.css('background-color', colors[idx]);
         });
       }
     };

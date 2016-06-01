@@ -62,11 +62,9 @@
 		};
 	});
 
-	app.controller("ctrl3.8", function () {
-
-	});
-
-	app.controller("ctrl3.9", function () {
-
+	app.controller("ctrl3.8", function ($scope, $routeParams, $location) {
+		$scope.version = $routeParams.version;
+		if ($scope.version !== "8" && $scope.version !== "9" && $scope.version !== "10")
+			$location.path('/');
 	});
 }());
