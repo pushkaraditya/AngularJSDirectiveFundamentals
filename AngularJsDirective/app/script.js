@@ -107,10 +107,13 @@
   app.directive('stateDisplay', function () {
     return {
       link: function (scope, el, attrs) {
-        var params = attrs['stateDisplay'].split(" ");
-        var linkVar = params[0];
+        var parms = attrs['stateDisplay'].split(" ");
+        var linkVar = parms[0];
+        var classes = parms.slice(1);
+        var all = classes.join(' ');
         scope.$watch(linkVar, function (newVal, oldVal) {
-          el.css('background-color', params[newVal + 1]);
+          el.removeClass(all);
+          el.addClass(classes[newVal]);
         });
       }
     };
