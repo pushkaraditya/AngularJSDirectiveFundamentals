@@ -61,4 +61,8 @@
 			}
 		};
 	});
+
+	app.controller("ctrl3.8", function () {
+
+	});
 }());
