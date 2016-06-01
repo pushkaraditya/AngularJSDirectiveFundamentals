@@ -107,7 +107,7 @@
   app.directive('stateDisplay', function () {
     return {
       link: function (scope, el, attrs) {
-        var colors = attrs['stateDisplay'].split(" ");
+        var colors = attrs['colors'].split(" ");
         var len = colors.length;
         scope.$watch(attrs['stateDisplay'], function (newVal, oldVal) {
           var idx = newVal % len;
