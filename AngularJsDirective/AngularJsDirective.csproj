@@ -932,6 +932,7 @@
     <Content Include="templates\myQuestion.html" />
     <Content Include="templates\removeFriend.html" />
     <Content Include="templates\userInfoCard.html" />
+    <Content Include="templates\userPanel.html" />
     <Content Include="templates\userTile.html" />
     <Content Include="templates\video.html" />
     <Content Include="templates\WIP.html" />

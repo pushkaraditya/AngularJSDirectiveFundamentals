@@ -1,0 +1,25 @@
+﻿<style>
+  .user-ok {
+  }
+
+  .user-warning {
+    color: yellow;
+  }
+
+  .user-problem {
+    color: orange;
+  }
+
+  .user-error {
+    color: red;
+  }
+</style>
+
+<div class="panel panel-primary">
+  <div class="panel-heading" ng-click="collapse()">
+    <span state-display="level user-ok user-warning user-problem user-error">{{name}}</span>
+    <button ng-click="nextState($event)" class="btn btn-info btn-xs pull-right">Next State</button>
+  </div>
+  <div class="panel-body" ng-hide="collapsed" ng-transclude>
+  </div>
+</div>

@@ -98,7 +98,8 @@
           $scope.removing = false;
         };
         $scope.confirmRemove = function () {
-          $scope.notifyParent({ friend: 'Chewbacca' });
+          $scope.notifyParent();
+          //$scope.notifyParent({ friend: 'Chewbacca' }); // This is how we override the parameters
         };
       }
     };

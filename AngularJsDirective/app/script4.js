@@ -97,7 +97,35 @@
         type: 'Astromech',
         productLine: 'R2 series'
       },
-      level: 1
+      level: 2
+    };
+  });
+
+  app.directive("userPanel", function () {
+    return {
+      restrict: 'E',
+      transclude: true,
+      templateUrl: 'templates/userPanel.html',
+      scope: {
+        name: '@',
+        level: '=',
+        initialCollapsed: '@collapsed'
+      },
+      controller: function ($scope) {
+
+        $scope.collapsed = ($scope.initialCollapsed === 'true');
+        $scope.collapse = function () {
+          $scope.collapsed = !$scope.collapsed;
+        };
+
+        $scope.nextState = function (evt) {
+          evt.stopPropagation();
+          evt.preventDefault();
+          $scope.level++;
+          $scope.level = $scope.level % 4;
+        };
+
+      }
     };
   });
 
@@ -110,22 +138,14 @@
         initialCollapsed: '@collapsed'
       },
       controller: function ($scope) {
-        $scope.collapsed = ($scope.initialCollapsed === 'true');
         $scope.knightMe = function (user) {
           user.rank = "Knight";
-        };
-        $scope.collapse = function () {
-          $scope.collapsed = !$scope.collapsed;
         };
         $scope.removeFriend = function (friend) {
           var idx = $scope.user.friends.indexOf(friend);
           if (idx > -1) {
             $scope.user.friends.splice(idx, 1);
           }
-        };
-        $scope.nextState = function () {
-          $scope.user.level++;
-          $scope.user.level = $scope.user.level % 4;
         };
       }
     };
@@ -140,14 +160,6 @@
         initialCollapsed: '@collapsed'
       },
       controller: function ($scope) {
-        $scope.collapsed = ($scope.initialCollapsed === 'true');
-        $scope.collapse = function () {
-          $scope.collapsed = !$scope.collapsed;
-        };
-        $scope.nextState = function () {
-          $scope.droid.level++;
-          $scope.droid.level = $scope.droid.level % 4;
-        };
       }
     };
   });
