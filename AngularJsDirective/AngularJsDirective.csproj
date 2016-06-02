@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\previous-page.js" />
     <Content Include="app\script.js" />
     <Content Include="app\script4.js" />
     <Content Include="app\videoCtrl.js" />
