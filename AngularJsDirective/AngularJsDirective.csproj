@@ -921,11 +921,13 @@
     <Content Include="templates\3.6.html" />
     <Content Include="templates\4.4.html" />
     <Content Include="templates\4.2.html" />
+    <Content Include="templates\4.5.html" />
     <Content Include="templates\4.html" />
     <Content Include="templates\3.8.html" />
     <Content Include="templates\3.7.html" />
     <Content Include="templates\address.html" />
     <Content Include="templates\displayBox.html" />
+    <Content Include="templates\droidInfoCard.html" />
     <Content Include="templates\main.html" />
     <Content Include="templates\myQuestion.html" />
     <Content Include="templates\removeFriend.html" />

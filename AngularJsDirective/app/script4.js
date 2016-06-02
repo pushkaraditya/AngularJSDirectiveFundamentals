@@ -60,4 +60,96 @@
       }
     };
   });
+
+  app.controller("ctrl4.5", function ($scope) {
+    $scope.luke = {
+      name: "Luke Skywalker",
+      address: {
+        street: 'PO Box 123',
+        city: 'Street Rebel Base',
+        planet: 'Yavin 4'
+      },
+      friends: [
+        'Han',
+        'Leia',
+        'Chewbacca'
+      ],
+      level: 0
+    };
+    $scope.han = {
+      name: "Han Solo",
+      address: {
+        street: 'PO Box 123',
+        city: 'Mos Eisley',
+        planet: 'Tattoine'
+      },
+      friends: [
+        'Luke',
+        'Leia',
+        'Chewbacca'
+      ],
+      level: 1
+    };
+    $scope.droid1 = {
+      name: 'R2-D2',
+      specifications: {
+        manufacturer: 'Industrial Automation',
+        type: 'Astromech',
+        productLine: 'R2 series'
+      },
+      level: 1
+    };
+  });
+
+  app.directive("personInfoCard", function () {
+    return {
+      templateUrl: "templates/userInfoCard.html",
+      restrict: "E",
+      scope: {
+        user: '=person',
+        initialCollapsed: '@collapsed'
+      },
+      controller: function ($scope) {
+        $scope.collapsed = ($scope.initialCollapsed === 'true');
+        $scope.knightMe = function (user) {
+          user.rank = "Knight";
+        };
+        $scope.collapse = function () {
+          $scope.collapsed = !$scope.collapsed;
+        };
+        $scope.removeFriend = function (friend) {
+          var idx = $scope.user.friends.indexOf(friend);
+          if (idx > -1) {
+            $scope.user.friends.splice(idx, 1);
+          }
+        };
+        $scope.nextState = function () {
+          $scope.user.level++;
+          $scope.user.level = $scope.user.level % 4;
+        };
+      }
+    };
+  });
+
+  app.directive("droidInfoCard", function () {
+    return {
+      templateUrl: "templates/droidInfoCard.html",
+      restrict: "E",
+      scope: {
+        droid: '=droid',
+        initialCollapsed: '@collapsed'
+      },
+      controller: function ($scope) {
+        $scope.collapsed = ($scope.initialCollapsed === 'true');
+        $scope.collapse = function () {
+          $scope.collapsed = !$scope.collapsed;
+        };
+        $scope.nextState = function () {
+          $scope.droid.level++;
+          $scope.droid.level = $scope.droid.level % 4;
+        };
+      }
+    };
+  });
+
 }());
