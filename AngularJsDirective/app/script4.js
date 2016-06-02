@@ -26,6 +26,7 @@
 
   app.controller("ctrl4.2", function ($scope) {
     $scope.message = "This is the message from controller";
+    console.log($scope);
   });
 
   app.directive("displayBox", function () {
@@ -37,8 +38,11 @@
         $scope.close = function () {
           $scope.hidden = true;
         };
+        $scope.message = "I'm hijaking you!";
+        console.log($scope);
       },
-      transclude: true 
+      transclude: true,
+      scope: {}
     };
   });
 }());
