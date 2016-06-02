@@ -919,6 +919,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="templates\3.5.html" />
     <Content Include="templates\3.6.html" />
+    <Content Include="templates\4.4.html" />
     <Content Include="templates\4.2.html" />
     <Content Include="templates\4.html" />
     <Content Include="templates\3.8.html" />
@@ -926,6 +927,7 @@
     <Content Include="templates\address.html" />
     <Content Include="templates\displayBox.html" />
     <Content Include="templates\main.html" />
+    <Content Include="templates\myQuestion.html" />
     <Content Include="templates\removeFriend.html" />
     <Content Include="templates\userInfoCard.html" />
     <Content Include="templates\userTile.html" />

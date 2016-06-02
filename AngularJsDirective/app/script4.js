@@ -45,4 +45,19 @@
       scope: {}
     };
   });
+
+  app.controller("ctrl4.4", function ($scope) {
+    $scope.answer = { baseLocation: "Yavin 4" };
+  });
+
+  app.directive("myQuestion", function () {
+    return {
+      restrict: 'E',
+      transclude: true,
+      templateUrl: 'templates/myQuestion.html',
+      scope: {
+        questionText: "@q"
+      }
+    };
+  });
 }());

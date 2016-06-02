@@ -37,6 +37,10 @@
       templateUrl: 'templates/4.2.html',
       controller: 'ctrl4.2'
     }).
+    when('/4.4', {
+      templateUrl: 'templates/4.4.html',
+      controller: 'ctrl4.4'
+    }).
     when('/4.:sNo', {
       templateUrl: 'templates/WIP.html',
       controller: 'ctrl4'
