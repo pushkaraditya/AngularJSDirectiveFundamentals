@@ -179,7 +179,7 @@
   });
 
   app.controller("ctrl5.5", function ($scope) {
-    var number = 4;
+    var number = 5;
     $scope.chapter = {
       unit: unit,
       number: number,
@@ -187,11 +187,11 @@
     };
 
     $scope.bountyHunters = [
-      { name: 'Boba Fett' },
-      { name: 'IG-88' },
-      { name: 'Dengar' },
-      { name: 'Bossk' },
-      { name: 'Cad Bane' }
+      { name: 'Boba Fett', age: 45 },
+      { name: 'IG-88', age: 25 },
+      { name: 'Dengar', age: 54 },
+      { name: 'Bossk', age: 89 },
+      { name: 'Cad Bane', age: 745/4 }
     ];
 
     $scope.add = function () {
@@ -203,7 +203,7 @@
     }
   });
 
-  app.directive('userList', function () {
+  app.directive('userList', function ($compile) {
     return {
       restrict: "A",
       transclude: 'element',
@@ -226,8 +226,10 @@
             var childScope = scope.$new();
             childScope[itemString] = collection[i];
             transclude(childScope, function (clone) {
-              var wrapper = angular.element('<div class="well" />');
-              wrapper.append(clone);
+              var template = $compile('<div class="panel panel-primary"><div class="panel-heading">{{' + itemString + '.name}}</div><div class="panel-body"></div></div>');
+              var wrapper = template(childScope);
+              wrapper.find(".panel-body").append(clone);
+
               el.before(wrapper);
               var item = {};
               item.el = wrapper;
