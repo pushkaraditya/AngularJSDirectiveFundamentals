@@ -1,0 +1,9 @@
+﻿<h1>{{chapter.unit}}.{{chapter.number}} - {{chapter.name}}</h1>
+
+<h2 class="well">Bounty Hunters</h2>
+<div user-list="hunter in bountyHunters">
+  <span>{{hunter.name}}</span>
+</div>
+<hr />
+<button class="btn btn-primary" ng-click="add()">Add</button>
+<button class="btn btn-primary" ng-click="remove()">Remove</button>
