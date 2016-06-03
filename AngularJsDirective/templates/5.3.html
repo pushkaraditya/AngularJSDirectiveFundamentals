@@ -1,0 +1,7 @@
+﻿<h1>{{chapter.unit}}.{{chapter.number}} - {{chapter.name}}</h1>
+
+<div my-lazy-render="showit" echo ng-repeat="item in items">
+    {{item}}
+</div>
+
+<button class="btn btn-primary" ng-click="showit = true">Render Content</button>

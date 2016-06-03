@@ -76,6 +76,48 @@
   });
 
 
+  app.controller("ctrl5.3", function ($scope) {
+    var number = 3;
+    $scope.chapter = {
+      unit: unit,
+      number: number,
+      name: chapters[number - 1]
+    };
+
+    $scope.items = [2,5,23,253];
+  });
+
+  app.directive("myLazyRender", function () {
+    return {
+      restrict: "A",
+      transclude: "element",
+      priority: 1200,
+      link: function (scope, el, attrs, ctrl, transclude) {
+        var hasBeenShown = false;
+        var unwatchFn = scope.$watch(attrs.myLazyRender, function (value) {
+          if (value && !hasBeenShown) {
+            hasBeenShown = true;
+            transclude(scope, function (clone) {
+              el.after(clone);
+            });
+            unwatchFn();
+          }
+        });
+      }
+    };
+  });
+
+  app.directive("echo", function () {
+    return {
+      restrict: "A",
+      priority: 900,
+      link: function (scope, el, attrs, ctrl, transclude) {
+        console.log('echo!');
+      }
+    };
+  });
+
+
   app.controller("ctrl5.x", function ($scope) {
     var number = 3;
     $scope.chapter = {
