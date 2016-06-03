@@ -1,0 +1,23 @@
+﻿<h1>{{chapter.unit}}.{{chapter.number}} - {{chapter.name}}</h1>
+
+<h2>Structural Directives</h2>
+<h4 ng-if="showSubtitle">They modify the structure of the DOM</h4>
+<input type="checkbox" ng-model="showSubtitle" /> Show Subtitle
+
+<h4>People</h4>
+<ul>
+  <li ng-repeat="person in people">{{person}}</li>
+</ul>
+
+<h4>Quality</h4>
+<div ng-switch on="quality">
+  <div ng-switch-when="good">
+    Episodes IV, V, VI
+  </div>
+  <div ng-switch-when="bad">
+    Episodes I, II, III
+  </div>
+</div>
+
+<input type="radio" name="quality" ng-model="quality" value="good" /> Good
+<input type="radio" name="quality" ng-model="quality" value="bad" /> Bad

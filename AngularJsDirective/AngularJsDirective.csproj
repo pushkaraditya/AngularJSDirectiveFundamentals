@@ -107,6 +107,7 @@
     <Content Include="app\previous-page.js" />
     <Content Include="app\script.js" />
     <Content Include="app\script4.js" />
+    <Content Include="app\script5.js" />
     <Content Include="app\videoCtrl.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -114,6 +115,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\nothing-to-show.jpg" />
+    <Content Include="Images\error.jpg" />
     <Content Include="Images\forklift.png" />
     <Content Include="Images\inventory.png" />
     <Content Include="Images\Work-in-Progress.jpg" />
@@ -919,6 +922,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="templates\3.5.html" />
     <Content Include="templates\3.6.html" />
+    <Content Include="templates\5.2.html" />
+    <Content Include="templates\5.1.html" />
+    <Content Include="templates\5.html" />
     <Content Include="templates\4.4.html" />
     <Content Include="templates\4.2.html" />
     <Content Include="templates\4.5.html" />
@@ -930,6 +936,7 @@
     <Content Include="templates\droidInfoCard.html" />
     <Content Include="templates\main.html" />
     <Content Include="templates\myQuestion.html" />
+    <Content Include="templates\NA.html" />
     <Content Include="templates\removeFriend.html" />
     <Content Include="templates\userInfoCard.html" />
     <Content Include="templates\userPanel.html" />

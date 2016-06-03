@@ -50,8 +50,20 @@
       controller: 'ctrl4.5'
     }).
     when('/4.:sNo', {
-      templateUrl: 'templates/WIP.html',
+      templateUrl: 'templates/NA.html',
       controller: 'ctrl4'
+    }).
+    when('/5', {
+      templateUrl: 'templates/5.html',
+      controller: 'ctrl5'
+    }).
+    when('/5.1', {
+      templateUrl: 'templates/5.1.html',
+      controller: 'ctrl5.1'
+    }).
+    when('/5.:sNo', {
+      templateUrl: 'templates/WIP.html',
+      controller: 'ctrl5'
     }).
     otherwise({
         redirectTo: '/'

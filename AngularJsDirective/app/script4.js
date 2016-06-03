@@ -13,6 +13,7 @@
 
   app.controller("ctrl4", function ($scope, $routeParams, $location, $timeout) {
     // this is basic controller, might help to avoid duplicate routing based code. This section should work as landing page for Chapter 4 exercises
+    $scope.unit = 4;
     $scope.sNo = $routeParams.sNo;
     var idx = $scope.sNo - 1;
     if (idx >= chapters.length) {
