@@ -59,7 +59,22 @@
       number: number,
       name: chapters[number - 1]
     };
+
+    $scope.items = [1, 3, 6, 78];
   });
+
+  app.directive("myTransclude", function () {
+    return {
+      restrict: 'A',
+      transclude: 'element',
+      link: function (scope, el, attrs, ctrl, transclude) {
+        transclude(scope, function (clone, scope) {
+          el.before(clone);
+        });
+      }
+    }
+  });
+
 
   app.controller("ctrl5.x", function ($scope) {
     var number = 3;
