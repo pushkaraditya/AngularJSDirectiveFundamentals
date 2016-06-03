@@ -69,6 +69,14 @@
       templateUrl: 'templates/5.3.html',
       controller: 'ctrl5.3'
     }).
+    when('/5.4', {
+      templateUrl: 'templates/5.4.html',
+      controller: 'ctrl5.4'
+    }).
+    when('/5.5', {
+      templateUrl: 'templates/5.5.html',
+      controller: 'ctrl5.5'
+    }).
     when('/5.:sNo', {
       templateUrl: 'templates/WIP.html',
       controller: 'ctrl5'
