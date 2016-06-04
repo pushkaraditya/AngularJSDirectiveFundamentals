@@ -241,16 +241,4 @@
       }
     }
   });
-
-
-  app.controller("ctrl5.x", function ($scope) {
-    var number = 3;
-    $scope.chapter = {
-      unit: unit,
-      number: number,
-      name: chapters[number - 1]
-    };
-
-
-  });
 }());

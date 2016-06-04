@@ -78,8 +78,32 @@
       controller: 'ctrl5.5'
     }).
     when('/5.:sNo', {
-      templateUrl: 'templates/WIP.html',
+      templateUrl: 'templates/NA.html',
       controller: 'ctrl5'
+    }).
+    when('/6', {
+      templateUrl: 'templates/6.html',
+      controller: 'ctrl6'
+    }).
+    when('/6.2', {
+      templateUrl: 'templates/6.2.html',
+      controller: 'ctrl6.2'
+    }).
+    when('/6.3', {
+      templateUrl: 'templates/6.3.html',
+      controller: 'ctrl6.3'
+    }).
+    when('/6.4', {
+      templateUrl: 'templates/6.4.html',
+      controller: 'ctrl6.4'
+    }).
+    when('/6.6', {
+      templateUrl: 'templates/6.6.html',
+      controller: 'ctrl6.6'
+    }).
+    when('/6.:sNo', {
+      templateUrl: 'templates/WIP.html',
+      controller: 'ctrl6'
     }).
     otherwise({
         redirectTo: '/'
