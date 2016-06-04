@@ -119,10 +119,20 @@
     }).
     when('/:unit.:sNo', {
       templateUrl: 'templates/WIP.html',
-      controller: 'ctrl7'
+      controller: 'defaultCtrl'
     }).
     otherwise({
         redirectTo: '/'
     });
+  });
+
+  app.controller("defaultCtrl", function ($scope, $routeParams, $location, $timeout) {
+    $scope.unit = $routeParams.unit;
+    $scope.sNo = $routeParams.sNo;
+
+    $scope.error = "Invalid url";
+    $timeout(function () {
+      $location.path("/");
+    }, 2000);
   });
 }());
