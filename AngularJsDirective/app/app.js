@@ -113,6 +113,10 @@
       templateUrl: 'templates/7.3.html',
       controller: 'ctrl7.3'
     }).
+    when('/7.5', {
+      templateUrl: 'templates/7.5.html',
+      controller: 'ctrl7.5'
+    }).
     when('/7.:sNo', {
       templateUrl: 'templates/WIP.html',
       controller: 'ctrl7'

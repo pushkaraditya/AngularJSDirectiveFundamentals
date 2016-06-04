@@ -77,6 +77,60 @@
   });
 
 
+  app.controller("ctrl7.5", function ($scope, $location) {
+    var number = $location.path().split('.')[1] - 0;
+    $scope.chapter = {
+      unit: unit,
+      number: number,
+      name: chapters[number - 1]
+    };
+
+    $scope.openModal = function () {
+      $scope.modalOpen = true;
+    }
+  });
+
+  
+
+  app.directive('modal', function ($document) {
+    return {
+      scope: {
+        modalOpen: '=open',
+        options: '=',
+        onClose: '&'
+      },
+      transclude: true,
+      templateUrl: 'templates/modalTemplate.html',
+      controller: function ($scope) {
+        $scope.close = function () {
+          $scope.modalOpen = false;
+          $scope.onClose();
+        };
+      },
+      link: function ($scope, el, attrs) {
+        var options = angular.extend({
+          height: '250px',
+          width: '500px',
+          top: '20%',
+          left: '30%'
+        }, $scope.options);
+        el.find('.modal-container').css({
+          'left': options.left,
+          'top': options.top,
+          'height': options.height + 'px',
+          'width': options.width + 'px'
+        });
+
+        var pageHeight = $document.height();
+        var pageWidth = $document.width();
+        el.find('.modal-blackout').css({
+          'width': pageWidth + 'px', 'height': pageHeight + 'px'
+        });
+      }
+    };
+  });
+
+
   app.controller("ctrl7.x", function ($scope, $location) {
     var number = $location.path().split('.')[1] - 0;
     $scope.chapter = {

@@ -924,6 +924,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="templates\3.5.html" />
     <Content Include="templates\3.6.html" />
+    <Content Include="templates\7.5.html" />
     <Content Include="templates\7.3.html" />
     <Content Include="templates\7.html" />
     <Content Include="templates\6.6.html" />
@@ -947,6 +948,7 @@
     <Content Include="templates\droidInfoCard.html" />
     <Content Include="templates\main.html" />
     <Content Include="templates\masterUsers.html" />
+    <Content Include="templates\modalTemplate.html" />
     <Content Include="templates\myQuestion.html" />
     <Content Include="templates\NA.html" />
     <Content Include="templates\removeFriend.html" />
