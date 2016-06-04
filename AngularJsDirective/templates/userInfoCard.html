@@ -14,4 +14,15 @@
     Rank: {{user.rank}}
   </div>
   <button ng-hide="user.rank" class="btn btn-success" ng-click="knightMe(user)">Knight Me</button>
+
+  <modal open="showKnightModal" options="{width:'100px',left:'40px'}" on-close="knightModalDone(response)">
+    <div class="panel panel-primary">
+      <div class="panel-header">Jedi Knight</div>
+      <div class="panel-body">
+        <p>Do you want Jedi Knight rank granted to {{user.name}}?</p>
+        <button class="btn btn-success" ng-click="knightDialogDone(true, user)">Yes</button>
+        <button class="btn btn-danger" ng-click="knightDialogDone(false, user)">No</button>
+      </div>
+    </div>
+  </modal>
 </user-panel>

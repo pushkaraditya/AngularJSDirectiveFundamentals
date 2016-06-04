@@ -71,10 +71,17 @@
       controller: function ($scope) {
         $scope.collapsed = ($scope.initialCollapsed === 'true');
         $scope.knightMe = function (user) {
-          jediPolicy.advanceToKnight(user).then(null, function (user) {
-            alert('Sorry, ' + user.name + ' is not ready to become Jedi Knight');
-          });
+          $scope.showKnightModal = true;
         };
+
+        $scope.knightDialogDone = function (response, user) {
+          $scope.showKnightModal = false;
+          if (response) {
+            jediPolicy.advanceToKnight(user).then(null, function (user) {
+              alert('Sorry, ' + user.name + ' is not ready to become Jedi Knight');
+            });
+          }
+        }
         $scope.collapse = function () {
           $scope.collapsed = !$scope.collapsed;
         };
