@@ -88,15 +88,64 @@
       number: number,
       name: chapters[number - 1]
     };
+  });
+
+
+  app.controller("ctrl6.6", function ($scope, $location) {
+    var number = $location.path().split('.')[1] - 0;
+    $scope.chapter = {
+      unit: unit,
+      number: number,
+      name: chapters[number - 1]
+    };
 
 
   });
 
+  app.directive("swTabstrip", function () {
+    return {
+      restrict: 'E',
+      transclude: true,
+      scope: {},
+      controller: function ($scope) {
+        $scope.panes = [];
+        $scope.select = function (pane) {
+          pane.selected = true;
+          $scope.panes.forEach(function (curPane) {
+            if (curPane !== pane) {
+              curPane.selected = false;
+            }
+          });
+        };
 
+        this.addPane = function (pane) {
+          $scope.panes.push(pane);
+          if ($scope.panes.length === 1)
+            pane.selected = true;
+        };
+      },
+      templateUrl: 'templates/swTabstrip.html'
+    };
+  });
+
+  app.directive("swPane", function () {
+    return {
+      restruct: 'E',
+      transclude: true,
+      scope: {
+        title: '@'
+      },
+      require: '^swTabstrip',
+      link: function (scope, el, attrs, tabstripCtrl) {
+        tabstripCtrl.addPane(scope);
+      },
+      templateUrl: 'templates/swPane.html'
+    };
+  });
 
 
   app.controller("ctrl6.x", function ($scope) {
-    var number = 3;
+    var number = $location.path().split('.')[1] - 0;
     $scope.chapter = {
       unit: unit,
       number: number,
