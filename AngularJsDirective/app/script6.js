@@ -68,7 +68,7 @@
   app.directive("starkiller", function () {
     return {
       scope: true,
-      require: '^vader',
+      require: 'vader',
       link: function ($scope, el, attrs, vaderCtrl) {
         el.data('name', 'Starkiller');
         el.data('master', vaderCtrl.name);
