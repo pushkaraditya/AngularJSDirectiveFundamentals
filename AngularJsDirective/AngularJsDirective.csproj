@@ -923,6 +923,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="templates\3.5.html" />
     <Content Include="templates\3.6.html" />
+    <Content Include="templates\6.4.html" />
     <Content Include="templates\6.3.html" />
     <Content Include="templates\6.html" />
     <Content Include="templates\5.2.html" />

@@ -37,27 +37,30 @@
   });
 
   app.directive("emperor", function () {
+    var name = "The Emperor";
     return {
       scope: true,
-      link: {
-        pre: function ($scope, el, attrs) {
-          el.data('name', 'The Emperor');
-          $scope.master = "The Emperor";
-        }
+      controller: function ($scope) {
+        this.name = name;
+      },
+      link: function ($scope, el, attrs) {
+        el.data('name', name);
       }
     };
   });
 
   app.directive("vader", function () {
+    var name = 'Vader';
     return {
       scope: true,
-      link: {
-        pre: function ($scope, el, attrs) {
-          el.data('name', 'Vader');
-          el.data('master', $scope.master);
-          console.log('Vader\'s master is ' + $scope.master);
-          $scope.master = 'Vader';
-        }
+      require: '^emperor',
+      controller: function ($scope) {
+        this.name = name;
+      },
+      link: function ($scope, el, attrs, emperorCtrl) {
+        el.data('name', name);
+        el.data('master', emperorCtrl.name);
+        console.log(name + '\'s master is ' + emperorCtrl.name);
       }
     };
   });
@@ -65,14 +68,25 @@
   app.directive("starkiller", function () {
     return {
       scope: true,
-      link: function ($scope, el, attrs) {
+      require: '^vader',
+      link: function ($scope, el, attrs, vaderCtrl) {
         el.data('name', 'Starkiller');
-        el.data('master', $scope.master);
-        console.log('Startkiller\'s master is ' + $scope.master);
+        el.data('master', vaderCtrl.name);
+        console.log('Startkiller\'s master is ' + vaderCtrl.name);
       }
     };
   });
 
+  app.controller("ctrl6.4", function ($scope) {
+    var number = 4;
+    $scope.chapter = {
+      unit: unit,
+      number: number,
+      name: chapters[number - 1]
+    };
+
+
+  });
 
 
 
