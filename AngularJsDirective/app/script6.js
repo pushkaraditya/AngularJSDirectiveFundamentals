@@ -68,20 +68,21 @@
   app.directive("starkiller", function () {
     return {
       scope: true,
-      require: '?^^vader',
-      link: function ($scope, el, attrs, vaderCtrl) {
+      require: ['^vader', '^emperor'],
+      link: function ($scope, el, attrs, ctrls) {
         el.data('name', 'Starkiller');
-        if (!!vaderCtrl) {
-          el.data('master', vaderCtrl.name);
-          console.log('Startkiller\'s master is ' + vaderCtrl.name);
+        if (!!ctrls[0]) {
+          el.data('master', ctrls[0].name);
+          console.log('Startkiller\'s master is ' + ctrls[0].name);
+          console.log('Startkiller\'s master\'s master is ' + ctrls[1].name);
         } else
           console.log('Starkiller doesn\'t have a master');
       }
     };
   });
 
-  app.controller("ctrl6.4", function ($scope) {
-    var number = 4;
+  app.controller("ctrl6.4", function ($scope, $location) {
+    var number = $location.path().split('.')[1] - 0;
     $scope.chapter = {
       unit: unit,
       number: number,

@@ -93,7 +93,11 @@
       templateUrl: 'templates/6.4.html',
       controller: 'ctrl6.4'
     }).
-    when('/6.6', {
+    when('/6.5', {
+      templateUrl: 'templates/6.4.html',
+      controller: 'ctrl6.4'
+    }).
+    when('/6.', {
       templateUrl: 'templates/6.6.html',
       controller: 'ctrl6.6'
     }).
