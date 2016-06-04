@@ -85,10 +85,6 @@
       templateUrl: 'templates/6.html',
       controller: 'ctrl6'
     }).
-    when('/6.2', {
-      templateUrl: 'templates/6.2.html',
-      controller: 'ctrl6.2'
-    }).
     when('/6.3', {
       templateUrl: 'templates/6.3.html',
       controller: 'ctrl6.3'

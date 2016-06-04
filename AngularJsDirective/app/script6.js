@@ -27,16 +27,54 @@
   });
 
 
-  app.controller("ctrl6.2", function ($scope) {
-    var number = 1;
+  app.controller("ctrl6.3", function ($scope) {
+    var number = 3;
     $scope.chapter = {
       unit: unit,
       number: number,
       name: chapters[number - 1]
     };
-
-
   });
+
+  app.directive("emperor", function () {
+    return {
+      scope: true,
+      link: {
+        pre: function ($scope, el, attrs) {
+          el.data('name', 'The Emperor');
+          $scope.master = "The Emperor";
+        }
+      }
+    };
+  });
+
+  app.directive("vader", function () {
+    return {
+      scope: true,
+      link: {
+        pre: function ($scope, el, attrs) {
+          el.data('name', 'Vader');
+          el.data('master', $scope.master);
+          console.log('Vader\'s master is ' + $scope.master);
+          $scope.master = 'Vader';
+        }
+      }
+    };
+  });
+
+  app.directive("starkiller", function () {
+    return {
+      scope: true,
+      link: function ($scope, el, attrs) {
+        el.data('name', 'Starkiller');
+        el.data('master', $scope.master);
+        console.log('Startkiller\'s master is ' + $scope.master);
+      }
+    };
+  });
+
+
+
 
 
   app.controller("ctrl6.x", function ($scope) {
