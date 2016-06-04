@@ -108,6 +108,7 @@
     <Content Include="app\script.js" />
     <Content Include="app\script4.js" />
     <Content Include="app\script5.js" />
+    <Content Include="app\script7.js" />
     <Content Include="app\script6.js" />
     <Content Include="app\videoCtrl.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -923,6 +924,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="templates\3.5.html" />
     <Content Include="templates\3.6.html" />
+    <Content Include="templates\7.html" />
     <Content Include="templates\6.6.html" />
     <Content Include="templates\6.4.html" />
     <Content Include="templates\6.3.html" />

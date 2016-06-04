@@ -101,13 +101,25 @@
       templateUrl: 'templates/6.6.html',
       controller: 'ctrl6.6'
     }).
-    when('/6.', {
-      templateUrl: 'templates/6.6.html',
-      controller: 'ctrl6.6'
-    }).
     when('/6.:sNo', {
-      templateUrl: 'templates/WIP.html',
+      templateUrl: 'templates/NA.html',
       controller: 'ctrl6'
+    }).
+    when('/7', {
+      templateUrl: 'templates/7.html',
+      controller: 'ctrl7'
+    }).
+    when('/7.2', {
+      templateUrl: 'templates/7.2.html',
+      controller: 'ctrl7.2'
+    }).
+    when('/7.:sNo', {
+      templateUrl: 'templates/WIP.html',
+      controller: 'ctrl7'
+    }).
+    when('/:unit.:sNo', {
+      templateUrl: 'templates/WIP.html',
+      controller: 'ctrl7'
     }).
     otherwise({
         redirectTo: '/'
