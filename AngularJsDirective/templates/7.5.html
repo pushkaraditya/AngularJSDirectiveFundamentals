@@ -4,7 +4,7 @@
 <a ng-click="openModal()">Click Here</a>
 
 <modal open="modalOpen" options="{top:55, height:165}" on-close="modalClosed(response)">
-  <div class="panel panel-primary" ng-controllerr="modalCtrl">
+  <div class="panel panel-primary" ng-controller="modalCtrl">
     <div class="panel-heading">Are you sure?</div>
     <div class="panel-body">
       <button class="btn btn-success" ng-click="close('yes')">Yes</button>
