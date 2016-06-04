@@ -68,11 +68,14 @@
   app.directive("starkiller", function () {
     return {
       scope: true,
-      require: 'vader',
+      require: '?vader',
       link: function ($scope, el, attrs, vaderCtrl) {
         el.data('name', 'Starkiller');
-        el.data('master', vaderCtrl.name);
-        console.log('Startkiller\'s master is ' + vaderCtrl.name);
+        if (!!vaderCtrl) {
+          el.data('master', vaderCtrl.name);
+          console.log('Startkiller\'s master is ' + vaderCtrl.name);
+        } else
+          console.log('Starkiller doesn\'t have a master');
       }
     };
   });
