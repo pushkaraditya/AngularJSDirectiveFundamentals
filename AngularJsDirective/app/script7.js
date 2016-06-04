@@ -29,6 +29,49 @@
   });
 
 
+  app.controller("ctrl7.3", function ($scope, $location) {
+    var number = $location.path().split('.')[1] - 0;
+    $scope.chapter = {
+      unit: unit,
+      number: number,
+      name: chapters[number - 1]
+    };
+
+    $scope.users = [
+      { name: 'Luke', planet: 'Tatooine', job: 'Jedi' },
+      { name: 'Han', planet: 'Nowhere', job: 'Jedi' },
+      { name: 'Chewbacca', planet: 'Kashyyyk', job: 'CoPilot' },
+    ];
+  });
+
+  app.directive("masterUsers", function () {
+    return {
+      scope: {
+        users: '=data',
+        selectedUser:'='
+      },
+      templateUrl: 'templates/masterUsers.html',
+      controller: function ($scope) {
+        $scope.selectedUser = $scope.users[0];
+
+        $scope.selectUser = function (user) {
+          $scope.selectedUser = user;
+        };
+      }
+    };
+  });
+
+  app.directive("detailUsers", function () {
+    return {
+      scope: {
+        users: '=data',
+        selectedUser: '='
+      },
+      templateUrl: 'templates/detailUsers.html'
+    };
+  });
+
+
   app.controller("ctrl7.x", function ($scope, $location) {
     var number = $location.path().split('.')[1] - 0;
     $scope.chapter = {

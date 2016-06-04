@@ -1,0 +1,13 @@
+﻿<h1>{{chapter.unit}}.{{chapter.number}} - {{chapter.name}}</h1>
+
+<h2>User List</h2>
+
+<div class="row">
+  <div class="col-xs-4">
+    <master-users data="users" selected-user="selectedUser" />
+  </div>
+
+  <div class="col-xs-8">
+    <detail-users data="users" selected-user="selectedUser" />
+  </div>
+</div>
