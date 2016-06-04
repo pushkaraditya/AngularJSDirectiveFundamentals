@@ -12,7 +12,12 @@
         'Leia',
         'Chewbacca'
       ],
-      level: 0
+      level: 0,
+      hasForce: true,
+      yearsOfJediTraining: 4,
+      master: 'Yoda',
+      passedTrails: true,
+      masterApproves: true
     };
     $scope.han = {
       name: "Han Solo",
@@ -33,7 +38,29 @@
   var app = angular.module("app");
   app.controller("mainCtrl", mainCtrl);
 
-  app.directive("userInfoCard", function () {
+  app.factory("jediPolicy", function ($q) {
+    return {
+      advanceToKnight: function (candidate) {
+        var promise = $q(function (resolve, reject) {
+          if (candidate.hasForce &&
+          (candidate.yearsOfJediTraining > 20
+            || candidate.isChosenOne
+            || (candidate.master == 'Yoda' && candidate.yearsOfJediTraining > 3)
+          )
+          && candidate.masterApproves
+          && candidate.passedTrails) {
+            candidate.rank = "Jedi Knight";
+            resolve(candidate);
+          } else {
+            reject(candidate);
+          }
+        });
+        return promise;
+      }
+    };
+  });
+
+  app.directive("userInfoCard", function (jediPolicy) {
     return {
       templateUrl: "templates/userInfoCard.html",
       restrict: "E",
@@ -44,7 +71,9 @@
       controller: function ($scope) {
         $scope.collapsed = ($scope.initialCollapsed === 'true');
         $scope.knightMe = function (user) {
-          user.rank = "Knight";
+          jediPolicy.advanceToKnight(user).then(null, function (user) {
+            alert('Sorry, ' + user.name + ' is not ready to become Jedi Knight');
+          });
         };
         $scope.collapse = function () {
           $scope.collapsed = !$scope.collapsed;

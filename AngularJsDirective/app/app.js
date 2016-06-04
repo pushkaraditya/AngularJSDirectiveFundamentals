@@ -109,7 +109,7 @@
       templateUrl: 'templates/7.html',
       controller: 'ctrl7'
     }).
-    when('/7.2', {
+    when('/7.9', {
       templateUrl: 'templates/7.2.html',
       controller: 'ctrl7.2'
     }).
